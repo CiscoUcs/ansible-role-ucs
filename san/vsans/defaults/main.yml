@@ -1,0 +1,16 @@
+---
+# defaults file for CiscoUcs.ucs/san/vsans
+# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
+# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+
+ucs_vsans:
+- name: VSAN-A
+  vsan_id: '101'
+  vlan_id: '101' 
+  fabric: A
+  fc_zoning: enabled
+- name: VSAN-B
+  vsan_id: '102'
+  vlan_id: '102'
+  fabric: B
+  fc_zoning: enabled

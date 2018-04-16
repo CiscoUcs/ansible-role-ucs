@@ -1,0 +1,21 @@
+---
+# tasks file for CiscoUcs.ucs/servers/service_profiles_from_templates
+- name: UCS Service Profile Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure Service Profiles from Templates
+    ucs_service_profile_from_template:
+      <<: *login_info
+      name: "{{ item.name }}"
+      source_template: "{{ item.source_template }}"
+      user_label: "{{ item.user_label | default(omit) }}"
+      power_state: "{{ item.power_state | default(omit) }}"
+    when: item.name is defined
+    with_items: "{{ ucs_service_profiles_from_templates }}"

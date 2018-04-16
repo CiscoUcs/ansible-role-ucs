@@ -1,0 +1,21 @@
+---
+# tasks file for CiscoUcs.ucs/san/vhba_templates
+- name: UCS vHBA Template Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure vHBA Templates
+    ucs_vhba_template:
+      <<: *login_info
+      name: "{{ item.name }}"
+      fabric: "{{ item.fabric }}"
+      vsan: "{{ item.vsan }}"
+      wwpn_pool: "{{ item.wwpn_pool }}"
+    when: item.name is defined
+    with_items: "{{ ucs_vhba_templates }}"

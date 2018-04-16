@@ -1,0 +1,19 @@
+---
+# tasks file for CiscoUcs.ucs/storage/manual_disk_groups
+- name: UCS Manual Disk Group Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Manually Configure Disk Groups
+    ucs_disk_group_policy_manual:
+      <<: *login_info
+      name: "{{ item.name }}"
+      disk_list: "{{ item.disk_list }}"
+    when: item.name is defined
+    with_items: "{{ ucs_manual_disk_groups }}"

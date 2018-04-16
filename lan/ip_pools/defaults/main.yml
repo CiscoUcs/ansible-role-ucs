@@ -1,0 +1,11 @@
+---
+# defaults file for CiscoUcs.ucs/lan/ip_pools role
+# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
+# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+
+ucs_ip_pools:
+- name: ext-mgmt
+  first_addr: 192.168.156.101
+  last_addr: 192.168.156.116
+  subnet_mask: 255.255.255.0
+  default_gw: 192.168.156.1

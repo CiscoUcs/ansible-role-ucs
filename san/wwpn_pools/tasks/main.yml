@@ -1,0 +1,22 @@
+---
+# tasks file for CiscoUcs.ucs/san/wwpn_pools
+- name: UCS WWPN Pool Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure WWPN Pools
+    ucs_wwn_pool:
+      <<: *login_info
+      name: "{{ item.name }}"
+      purpose: "{{ item.purpose }}"
+      order: "{{ item.order }}"
+      first_addr: "{{ item.first_addr }}"
+      last_addr: "{{ item.last_addr }}"
+    when: item.name is defined
+    with_items: "{{ ucs_wwpn_pools }}"

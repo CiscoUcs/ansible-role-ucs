@@ -1,0 +1,14 @@
+---
+# tasks file for ucs lan
+- include_role:
+    name: CiscoUcs.ucs/lan/ip_pools
+- include_role:
+    name: CiscoUcs.ucs/lan/port_channels
+- include_role:
+    name: CiscoUcs.ucs/lan/mac_pools
+- include_role:
+    name: CiscoUcs.ucs/lan/vlans
+- include_role:
+    name: CiscoUcs.ucs/lan/vnic_templates
+- include_role:
+    name: CiscoUcs.ucs/lan/lan_connectivity_policies

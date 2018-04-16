@@ -1,0 +1,42 @@
+---
+# tasks file for CiscoUcs.ucs/servers/service_profile_templates
+- name: UCS Service Profile Template Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure Service Profile Templates
+    ucs_service_profile_template:
+      <<: *login_info
+      name: "{{ item.name }}"
+      template_type: "{{ item.template_type | default(omit) }}"
+      uuid_pool: "{{ item.uuid_pool | default(omit) }}"
+      description: "{{ item.description | default(omit) }}"
+      local_disk_policy: "{{ item.local_disk_policy | default(omit) }}"
+      lan_connectivity_policy: "{{ item.lan_connectivity_policy | default(omit) }}"
+      san_connectivity_policy: "{{ item.san_connectivity_policy | default(omit) }}"
+      vmedia_policy: "{{ item.vmedia_policy | default(omit) }}"
+      boot_policy: "{{ item.boot_policy | default(omit) }}"
+      maintenance_policy: "{{ item.maintenance_policy | default(omit) }}"
+      server_pool: "{{ item.server_pool | default(omit) }}"
+      server_pool_qualification: "{{ item.server_pool_qualification | default(omit) }}"
+      power_state: "{{ item.power_state | default(omit) }}"
+      host_firmware_package: "{{ item.host_firmware_package | default(omit) }}"
+      bios_policy: "{{ item.bios_policy | default(omit) }}"
+      ipmi_access_profile: "{{ item.ipmi_access_profile | default(omit) }}"
+      sol_policy: "{{ item.sol_policy | default(omit) }}"
+      mgmt_ip_pool: "{{ item.mgmt_ip_pool | default(omit) }}"
+      threshold_policy: "{{ item.threshold_policy | default(omit) }}"
+      power_control_policy: "{{ item.power_control_policy | default(omit) }}"
+      power_sync_policy: "{{ item.power_sync_policy | default(omit) }}"
+      scrub_policy: "{{ item.scrub_policy | default(omit) }}"
+      kvm_mgmt_policy: "{{ item.kvm_mgmt_policy | default(omit) }}"
+      graphics_card_policy: "{{ item.graphics_card_policy | default(omit) }}"
+      user_label: "{{ item.user_label | default(omit) }}"
+    when: item.name is defined
+    with_items: "{{ ucs_service_profile_templates }}"

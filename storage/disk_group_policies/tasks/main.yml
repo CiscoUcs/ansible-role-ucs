@@ -1,0 +1,19 @@
+---
+# tasks file for CiscoUcs.ucs/storage/disk_group_policies
+- name: UCS Disk Group Policy Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure Disk Group Policies
+    ucs_disk_group_policy:
+      <<: *login_info
+      name: "{{ item.name }}"
+      raid_level: "{{ item.raid_level | default(omit) }}"
+    when: item.name is defined
+    with_items: "{{ ucs_disk_group_policies }}"

@@ -1,0 +1,27 @@
+---
+# defaults file for CiscoUcs.ucs/lan/vnic_templates role
+# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
+# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+
+ucs_vnic_templates:
+- name: Cntr-Template
+  fabric: A-B
+  template_type: updating-template
+  mac_pool: MAC-Pool-A
+  network_control_policy: Enable-CDP-LLDP
+  vlans_list:
+  - name: Container-MGMT-VLAN
+    native: 'yes'
+- name: Container-NFS-A
+  fabric: A
+  redundancy_type: primary
+  peer_redundancy_templ: Container-NFS-B
+  template_type: updating-template
+  mtu: '9000'
+  mac_pool: MAC-Pool-A
+  network_control_policy: Enable-CDP-LLDP
+  vlans_list:
+  - name: Container-MGMT-NFS
+    native: 'yes'
+  - name: Container-TNT-A-NFS
+    native: 'no'

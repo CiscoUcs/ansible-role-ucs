@@ -1,0 +1,10 @@
+---
+# tasks file for ucs storage
+- include_role:
+    name: CiscoUcs.ucs/storage/storage_profiles
+- include_role:
+    name: CiscoUcs.ucs/storage/disk_group_policies
+- include_role:
+    name: CiscoUcs.ucs/storage/manual_disk_groups
+- include_role:
+    name: CiscoUcs.ucs/storage/local_luns

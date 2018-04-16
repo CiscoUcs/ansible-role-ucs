@@ -1,0 +1,20 @@
+---
+# tasks file for CiscoUcs.ucs/lan/vlans
+- name: UCS VLAN Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure VLANs
+    ucs_vlans:
+      <<: *login_info
+      name: "{{ item.name }}"
+      id: "{{ item.id }}"
+      native: "{{ item.native | default(omit) }}"
+    when: item.name is defined
+    with_items: "{{ ucs_vlans }}"

@@ -1,0 +1,22 @@
+---
+# tasks file for CiscoUcs.ucs/san/vsans
+- name: UCS vSAN Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure Storage VSANs
+    ucs_vsans:
+      <<: *login_info
+      name: "{{ item.name }}"
+      vsan_id: "{{ item.vsan_id }}"
+      vlan_id: "{{ item.vlan_id }}"
+      fabric: "{{ item.fabric }}"
+      fc_zoning: "{{ item.fc_zoning }}"
+    when: item.name is defined
+    with_items: "{{ ucs_vsans }}"

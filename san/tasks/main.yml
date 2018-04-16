@@ -1,0 +1,12 @@
+---
+# tasks file for ucs san
+- include_role:
+    name: CiscoUcs.ucs/san/wwnn_pools
+- include_role:
+    name: CiscoUcs.ucs/san/wwpn_pools
+- include_role:
+    name: CiscoUcs.ucs/san/vsans
+- include_role:
+    name: CiscoUcs.ucs/san/vhba_templates
+- include_role:
+    name: CiscoUcs.ucs/san/san_connectivity_policies

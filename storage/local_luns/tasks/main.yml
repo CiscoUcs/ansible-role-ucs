@@ -1,0 +1,22 @@
+---
+# tasks file for CiscoUcs.ucs/storage/local_luns
+- name: UCS Local LUN Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure Local LUNs
+    ucs_local_lun:
+      <<: *login_info
+      name: "{{ item.name }}"
+      size: "{{ item.size }}"
+      auto_deploy: "{{ item.auto_deploy | default(omit) }}"
+      disk_policy_name: "{{ item.disk_policy_name }}"
+      sp_name: "{{ item.sp_name }}"
+    when: item.name is defined
+    with_items: "{{ ucs_local_luns }}"

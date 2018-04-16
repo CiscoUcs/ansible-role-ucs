@@ -1,0 +1,10 @@
+---
+# tasks file for ucs servers
+- include_role:
+    name: CiscoUcs.ucs/servers/uuid_pools
+- include_role:
+    name: CiscoUcs.ucs/servers/boot_policies
+- include_role:
+    name: CiscoUcs.ucs/servers/service_profile_templates
+- include_role:
+    name: CiscoUcs.ucs/servers/service_profiles_from_templates

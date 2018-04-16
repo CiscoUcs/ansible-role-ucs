@@ -1,0 +1,20 @@
+---
+# tasks file for CiscoUcs.ucs/san/san_connectivity_policies
+- name: UCS SAN Connectivity Policy Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure SAN Connectivity Policy
+    ucs_san_connectivity:
+      <<: *login_info
+      name: "{{ item.name }}"
+      wwnn_pool: "{{ item.wwnn_pool }}"
+      vhba_list: "{{ item.vhba_list }}"
+    when: item.name is defined
+    with_items: "{{ ucs_san_connectivity_policies }}"

@@ -1,0 +1,18 @@
+---
+# tasks file for CiscoUcs.ucs/storage/storage_profiles
+- name: UCS Storage Profile Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure Storage Profiles
+    ucs_storage_profile:
+      <<: *login_info
+      name: "{{ item.name }}"
+    when: item.name is defined
+    with_items: "{{ ucs_storage_profiles }}"

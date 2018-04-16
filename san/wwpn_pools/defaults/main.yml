@@ -1,0 +1,16 @@
+---
+# defaults file for CiscoUcs.ucs/san/wwpn_pools
+# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
+# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+
+ucs_wwpn_pools:
+- name: WWPN-Pool-A
+  order: sequential
+  purpose: port
+  first_addr: 20:00:00:25:B5:48:0A:00
+  last_addr: 20:00:00:25:B5:48:0A:0F
+- name: WWPN-Pool-B
+  order: sequential
+  purpose: port
+  first_addr: 20:00:00:25:B5:48:0B:00
+  last_addr: 20:00:00:25:B5:48:0B:0F
