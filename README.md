@@ -28,6 +28,7 @@ Role Variables
 Variables in defaults/main.yml for each role (e.g., lan/vlans/defaults.main.yml) are based on the FlexPod Datacenter with Docker Cisco Validated Design (CVD).
 The Docker EE CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
 Your own role variables can be specified in playbooks, group_vars, or other variable locations used by Ansible.  See the examples for additional information.
+
 Example Playbook
 ----------------
 
