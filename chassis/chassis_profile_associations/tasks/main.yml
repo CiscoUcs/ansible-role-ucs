@@ -1,0 +1,20 @@
+---
+# tasks file for CiscoUcs.ucs/chassis/chassis_profile_associations
+- name: UCS Chassis Profile Association
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure Chassis Profile Associations
+    ucs_chassis_profile_association:
+      <<: *login_info
+      chassis_profile_name: "{{ item.chassis_profile_name }}"
+      chassis_dn: "{{ item.chassis_dn }}"
+      restrict_migration: "{{ item.restrict_migration | default(omit) }}"
+    when: item.chassis_profile_name is defined
+    with_items: "{{ ucs_chassis_profile_associations }}"

@@ -1,0 +1,25 @@
+---
+# defaults file for CiscoUcs.ucs/servers/bios_policies
+# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
+# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+
+ucs_bios_policies:
+- objects:
+  - {
+        "module": "ucsmsdk.mometa.bios.BiosVProfile",
+        "class": "BiosVProfile",
+        "properties": {
+            "parent_mo_or_dn": "org-root",
+            "name": "Docker",
+            "reboot_on_update": "yes"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.bios.BiosVfConsistentDeviceNameControl",
+                "class": "BiosVfConsistentDeviceNameControl",
+                "properties": {
+                    "vp_cdn_control": "enabled"
+                }
+            }
+        ]
+    }

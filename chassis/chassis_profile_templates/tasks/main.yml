@@ -1,0 +1,24 @@
+---
+# tasks file for CiscoUcs.ucs/chassis/chassis_profile_templates
+- name: UCS Chassis Profile Template Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure Chassis Profile Templates
+    ucs_chassis_template:
+      <<: *login_info
+      name: "{{ item.name }}"
+      description: "{{ item.description | default(omit) }}"
+      template_type: "{{ item.template_type | default(omit) }}"
+      maintenance_policy: "{{ item.maintenance_policy | default(omit) }}"
+      firmware_package: "{{ item.firmware_package | default(omit) }}"
+      compute_connection_policy: "{{ item.compute_connection_policy | default(omit) }}"
+      disk_zoning_policy: "{{ item.disk_zoning_policy | default(omit) }}"
+    when: item.name is defined
+    with_items: "{{ ucs_chassis_profile_templates }}"

@@ -1,0 +1,12 @@
+---
+# tasks file for ucs chassis
+- include_role:
+    name: CiscoUcs.ucs/chassis/chassis_maintenance_policies
+- include_role:
+    name: CiscoUcs.ucs/chassis/disk_zoning_policies
+- include_role:
+    name: CiscoUcs.ucs/chassis/chassis_profile_templates
+- include_role:
+    name: CiscoUcs.ucs/chassis/chassis_profiles_from_templates
+- include_role:
+    name: CiscoUcs.ucs/chassis/chassis_profile_associations

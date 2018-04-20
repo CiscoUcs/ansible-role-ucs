@@ -3,7 +3,11 @@
 - include_role:
     name: CiscoUcs.ucs/servers/uuid_pools
 - include_role:
+    name: CiscoUcs.ucs/servers/bios_policies
+- include_role:
     name: CiscoUcs.ucs/servers/boot_policies
+- include_role:
+    name: CiscoUcs.ucs/servers/host_firmware_packages
 - include_role:
     name: CiscoUcs.ucs/servers/service_profile_templates
 - include_role:

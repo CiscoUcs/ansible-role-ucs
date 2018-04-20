@@ -1,0 +1,24 @@
+---
+# tasks file for CiscoUcs.ucs/chassis/disk_zoning_policies
+- name: UCS Disk Zoning Policy Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure Disk Zoning Policy
+    ucs_chassis_zoning:
+      <<: *login_info
+      name: "{{ item.name }}"
+      description: "{{ item.description | default(omit) }}"
+      preserve_config: "{{ item.preserve_config | default(omit) }}"
+      ownership: "{{ item.ownership | default(omit) }}"
+      server_id: "{{ item.server_id | default(omit) }}"
+      controller_id: "{{ item.controller_id | default(omit) }}"
+      slot_range: "{{ item.slot_range }}"
+    when: item.name is defined
+    with_items: "{{ ucs_disk_zoning_policies }}"
