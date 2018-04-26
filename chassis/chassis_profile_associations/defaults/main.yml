@@ -4,5 +4,18 @@
 # The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
 
 ucs_chassis_profile_associations:
+- chassis_profile_name: Swift-Chassis-1
+  chassis_dn: sys/chassis-1
+- chassis_profile_name: Swift-Chassis-2
+  chassis_dn: sys/chassis-2
+- chassis_profile_name: Swift-Chassis-3
+  chassis_dn: sys/chassis-3
+- chassis_profile_name: Swift-Chassis-4
+  chassis_dn: sys/chassis-4
 - chassis_profile_name: Swift-Chassis-5
   chassis_dn: sys/chassis-5
+- chassis_profile_name: Swift-Chassis-6
+  chassis_dn: sys/chassis-6
+  # set wait_for_associate on any chassis where the task needs to wait
+  # when associating many chassis you may only want to wait on certain chassis (not all)
+  wait_for_associate: yes

@@ -10,6 +10,7 @@
       state: "{{ ucs_state }}"
 
   block:
+  # Following task requests association but does not wait
   - name: Configure Chassis Profile Associations
     ucs_chassis_profile_association:
       <<: *login_info
@@ -17,4 +18,23 @@
       chassis_dn: "{{ item.chassis_dn }}"
       restrict_migration: "{{ item.restrict_migration | default(omit) }}"
     when: item.chassis_profile_name is defined
+    with_items: "{{ ucs_chassis_profile_associations }}"
+
+  # Conditionally wait for each chassis to report associated.
+  # Default is to check each chassis every 10 sec 120 times (wait up to 1200 total seconds (20 minutes))
+  - name: Wait for Chassis Profile Associations
+    ucs_chassis_profile_association:
+      <<: *login_info
+      chassis_profile_name: "{{ item.chassis_profile_name }}"
+      chassis_dn: "{{ item.chassis_dn }}"
+      restrict_migration: "{{ item.restrict_migration | default(omit) }}"
+    when:
+    - item.chassis_profile_name is defined
+    - login_info.state == 'present'
+    - item.wait_for_associate is defined
+    - item.wait_for_associate
+    register: result
+    until: result.assign_state == 'assigned' and result.assoc_state == 'associated'
+    retries: 120
+    delay: 10
     with_items: "{{ ucs_chassis_profile_associations }}"
