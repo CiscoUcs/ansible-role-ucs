@@ -1,0 +1,370 @@
+---
+# defaults file for CiscoUcs.ucs/equipment/fabric_interconnect_ports
+# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
+# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+
+ucs_fabric_interconnect_ports:
+- objects:
+  # server ports
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "A"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "1",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "A"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "2",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "A"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "3",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "A"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "4",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "A"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "5",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "A"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "6",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "A"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "7",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "A"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "8",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "B"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "1",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "B"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "2",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "B"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "3",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "B"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "4",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "B"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "5",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "B"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "6",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "B"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "7",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricDceSwSrv",
+        "class": "FabricDceSwSrv",
+        "properties": {
+            "parent_mo_or_dn": "fabric/server",
+            "id": "B"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricDceSwSrvEp",
+                "class": "FabricDceSwSrvEp",
+                "properties": {
+                    "port_id": "8",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+- objects:
+  # uplink ports
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricEthLan",
+        "class": "FabricEthLan",
+        "properties": {
+            "parent_mo_or_dn": "fabric/lan",
+            "id": "A"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricEthLanEp",
+                "class": "FabricEthLanEp",
+                "properties": {
+                    "port_id": "33",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricEthLan",
+        "class": "FabricEthLan",
+        "properties": {
+            "parent_mo_or_dn": "fabric/lan",
+            "id": "A"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricEthLanEp",
+                "class": "FabricEthLanEp",
+                "properties": {
+                    "port_id": "34",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricEthLan",
+        "class": "FabricEthLan",
+        "properties": {
+            "parent_mo_or_dn": "fabric/lan",
+            "id": "B"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricEthLanEp",
+                "class": "FabricEthLanEp",
+                "properties": {
+                    "port_id": "33",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricEthLan",
+        "class": "FabricEthLan",
+        "properties": {
+            "parent_mo_or_dn": "fabric/lan",
+            "id": "B"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricEthLanEp",
+                "class": "FabricEthLanEp",
+                "properties": {
+                    "port_id": "34",
+                    "slot_id": "1"
+                }
+            }
+        ]
+    }

@@ -4,15 +4,36 @@
 # The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
 
 ucs_service_profile_templates:
-- name: Docker-Host-FC-A
+- name: DEE-Ctrl
   template_type: updating-template
   uuid_pool: UUID-Pool
+  storage_profile: Docker-StgProf
   lan_connectivity_policy: Cntr-FC-Boot
   san_connectivity_policy: Cntr-FC-Boot
-  boot_policy: Boot-FC-Cntr
+  boot_policy: DEE-vMedia
   maintenance_policy: default
-  server_pool: Container-Pool
-  power_state: down
-  host_firmware_package: default
-  bios_policy: Cntr-Host
-  power_control_policy: No-Power-Cap
+  server_pool: DEE-Ctrl
+  host_firmware_package: 3.2.2c
+  bios_policy: Docker
+- name: DEE-DTR
+  template_type: updating-template
+  uuid_pool: UUID-Pool
+  storage_profile: Docker-StgProf
+  lan_connectivity_policy: Cntr-FC-Boot
+  san_connectivity_policy: Cntr-FC-Boot
+  boot_policy: DEE-vMedia
+  maintenance_policy: default
+  server_pool: DEE-DTR
+  host_firmware_package: 3.2.2c
+  bios_policy: Docker
+- name: DEE-Wrk
+  template_type: updating-template
+  uuid_pool: UUID-Pool
+  storage_profile: Docker-StgProf
+  lan_connectivity_policy: Cntr-FC-Boot
+  san_connectivity_policy: Cntr-FC-Boot
+  boot_policy: DEE-vMedia
+  maintenance_policy: default
+  server_pool: DEE-Wrk
+  host_firmware_package: 3.2.2c
+  bios_policy: Docker

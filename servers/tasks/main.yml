@@ -9,6 +9,8 @@
 - include_role:
     name: CiscoUcs.ucs/servers/host_firmware_packages
 - include_role:
+    name: CiscoUcs.ucs/servers/server_pools
+- include_role:
     name: CiscoUcs.ucs/servers/service_profile_templates
 - include_role:
     name: CiscoUcs.ucs/servers/service_profiles_from_templates

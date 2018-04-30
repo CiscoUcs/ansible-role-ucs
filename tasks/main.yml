@@ -1,6 +1,6 @@
 ---
 # tasks file for ucs role
-- name: UCS Configuration (LAN/SAN/Storage/Servers)
+- name: UCS Configuration (Admin/Equipment/LAN/SAN/Chassis/Storage/Servers)
 
   vars:
     login_info: &login_info
@@ -10,10 +10,18 @@
       state: "{{ ucs_state }}"
 
   block:
+  # admin and equipment can be disruptive, please customize variables for your environment
+  # - include_role:
+  #     name: CiscoUcs.ucs/admin
+  # - include_role:
+  #     name: CiscoUcs.ucs/equipment
   - include_role:
       name: CiscoUcs.ucs/lan
   - include_role:
       name: CiscoUcs.ucs/san
+  # chassis not currently included as all environments may not require chassis config
+  # - include_role:
+  #     name: CiscoUcs.ucs/chassis
   - include_role:
       name: CiscoUcs.ucs/storage
   - include_role:

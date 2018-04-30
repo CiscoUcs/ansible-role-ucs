@@ -1,6 +1,6 @@
 ---
-# tasks file for CiscoUcs.ucs/servers/host_firmware_packages
-- name: UCS Host Firmware Package Configuration
+# tasks file for CiscoUse.ucs/equipment/fabric_interconnect_ports
+- name: UCS Fabric Interconnect Port Configuration
 
   vars:
     login_info: &login_info
@@ -10,9 +10,9 @@
       state: "{{ ucs_state }}"
 
   block:
-  - name: Configure Host Firmware Package Policies
+  - name: Configure Fabric Interconnect Ports
     ucs_managed_objects:
       <<: *login_info
       objects: "{{ item.objects }}" 
     when: item.objects is defined
-    with_items: "{{ ucs_host_firmware_packages }}"
+    with_items: "{{ ucs_fabric_interconnect_ports }}"

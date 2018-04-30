@@ -1,0 +1,7 @@
+---
+# defaults file for CiscoUcs.ucs/admin/timezone
+# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
+# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+
+ucs_timezone:
+- timezone: America/Los_Angeles (Pacific Time)

@@ -1,0 +1,174 @@
+---
+# defaults file for CiscoUcs.ucs/servers/server_pools
+# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
+# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+
+ucs_server_pools:
+- objects:
+  - {
+        "module": "ucsmsdk.mometa.compute.ComputePool",
+        "class": "ComputePool",
+        "properties": {
+            "parent_mo_or_dn": "org-root",
+            "name": "DEE-Ctrl"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
+                "properties": {
+                    "chassis_id": "5",
+                    "slot_id": "1"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
+                "properties": {
+                    "chassis_id": "7",
+                    "slot_id": "1"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
+                "properties": {
+                    "chassis_id": "6",
+                    "slot_id": "1"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
+                "class": "ComputePooledRackUnit",
+                "properties": {
+                    "id": "5"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
+                "class": "ComputePooledRackUnit",
+                "properties": {
+                    "id": "3"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
+                "class": "ComputePooledRackUnit",
+                "properties": {
+                    "id": "1"
+                }
+            }
+        ]
+    }
+- objects:
+  - {
+        "module": "ucsmsdk.mometa.compute.ComputePool",
+        "class": "ComputePool",
+        "properties": {
+            "parent_mo_or_dn": "org-root",
+            "name": "DEE-DTR"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
+                "properties": {
+                    "chassis_id": "5",
+                    "slot_id": "2"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
+                "properties": {
+                    "chassis_id": "7",
+                    "slot_id": "2"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
+                "properties": {
+                    "chassis_id": "6",
+                    "slot_id": "2"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
+                "class": "ComputePooledRackUnit",
+                "properties": {
+                    "id": "6"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
+                "class": "ComputePooledRackUnit",
+                "properties": {
+                    "id": "4"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
+                "class": "ComputePooledRackUnit",
+                "properties": {
+                    "id": "2"
+                }
+            }
+        ]
+    }
+- objects:
+  - {
+        "module": "ucsmsdk.mometa.compute.ComputePool",
+        "class": "ComputePool",
+        "properties": {
+            "parent_mo_or_dn": "org-root",
+            "name": "DEE-Wrk"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
+                "properties": {
+                    "chassis_id": "5",
+                    "slot_id": "3"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
+                "properties": {
+                    "chassis_id": "7",
+                    "slot_id": "3"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
+                "properties": {
+                    "chassis_id": "6",
+                    "slot_id": "3"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
+                "class": "ComputePooledRackUnit",
+                "properties": {
+                    "id": "9"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
+                "class": "ComputePooledRackUnit",
+                "properties": {
+                    "id": "8"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
+                "class": "ComputePooledRackUnit",
+                "properties": {
+                    "id": "7"
+                }
+            }
+        ]
+    }

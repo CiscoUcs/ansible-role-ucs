@@ -1,0 +1,16 @@
+---
+# defaults file for CiscoUcs.ucs/equipment/chassis_discovery_policies
+# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
+# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+
+ucs_chassis_discovery_policies:
+- objects:
+  - {
+        "module": "ucsmsdk.mometa.compute.ComputeChassisDiscPolicy",
+        "class": "ComputeChassisDiscPolicy",
+        "properties": {
+            "parent_mo_or_dn": "org-root",
+            "action": "platform-max",
+            "link_aggregation_pref": "port-channel"
+        }
+    }

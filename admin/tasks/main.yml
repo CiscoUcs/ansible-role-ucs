@@ -1,0 +1,6 @@
+---
+# tasks file for ucs admin
+- include_role:
+    name: CiscoUcs.ucs/admin/timezone
+- include_role:
+    name: CiscoUcs.ucs/admin/ntp

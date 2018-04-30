@@ -4,33 +4,33 @@
 # The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
 
 ucs_service_profiles_from_templates:
-- name: Docker-Host-01
-  source_template: Docker-Host-FC-A
+- name: DEE-Ctrl-01
+  source_template: DEE-Ctrl
   user_label: UCP-Ctrl-1
-- name: Docker-Host-02
-  source_template: Docker-Host-FC-A
+- name: DEE-Ctrl-02
+  source_template: DEE-Ctrl
   user_label: UCP-Ctrl-2
-- name: Docker-Host-03
-  source_template: Docker-Host-FC-A
+- name: DEE-Ctrl-03
+  source_template: DEE-Ctrl
   user_label: UCP-Ctrl-3
-- name: Docker-Host-04
-  source_template: Docker-Host-FC-A
+- name: DEE-DTR-01
+  source_template: DEE-DTR
   user_label: UCP-DTR-1
-- name: Docker-Host-05
-  source_template: Docker-Host-FC-A
+- name: DEE-DTR-02
+  source_template: DEE-DTR
   user_label: UCP-DTR-2
-- name: Docker-Host-06
-  source_template: Docker-Host-FC-A
+- name: DEE-DTR-03
+  source_template: DEE-DTR
   user_label: UCP-DTR-3
-- name: Docker-Host-07
-  source_template: Docker-Host-FC-A
+- name: DEE-Wrk-01
+  source_template: DEE-Wrk
   user_label: UCP-Node-1
-- name: Docker-Host-08
-  source_template: Docker-Host-FC-A
+- name: DEE-Wrk-02
+  source_template: DEE-Wrk
   user_label: UCP-Node-2
-- name: Docker-Host-09
-  source_template: Docker-Host-FC-A
+- name: DEE-Wrk-03
+  source_template: DEE-Wrk
   user_label: UCP-Node-3
-- name: Docker-Host-10
-  source_template: Docker-Host-FC-A
+- name: DEE-Wrk-04
+  source_template: DEE-Wrk
   user_label: UCP-Node-4
