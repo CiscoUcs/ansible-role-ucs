@@ -18,6 +18,7 @@
       uuid_pool: "{{ item.uuid_pool | default(omit) }}"
       description: "{{ item.description | default(omit) }}"
       local_disk_policy: "{{ item.local_disk_policy | default(omit) }}"
+      storage_profile: "{{ item.storage_profile | default(omit) }}"
       lan_connectivity_policy: "{{ item.lan_connectivity_policy | default(omit) }}"
       san_connectivity_policy: "{{ item.san_connectivity_policy | default(omit) }}"
       vmedia_policy: "{{ item.vmedia_policy | default(omit) }}"

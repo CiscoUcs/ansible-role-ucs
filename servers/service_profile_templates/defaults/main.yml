@@ -7,7 +7,7 @@ ucs_service_profile_templates:
 - name: DEE-Ctrl
   template_type: updating-template
   uuid_pool: UUID-Pool
-  storage_profile: Docker-StgProf
+  storage_profile: DEE-StgProf
   lan_connectivity_policy: Cntr-FC-Boot
   san_connectivity_policy: Cntr-FC-Boot
   boot_policy: DEE-vMedia
@@ -18,7 +18,7 @@ ucs_service_profile_templates:
 - name: DEE-DTR
   template_type: updating-template
   uuid_pool: UUID-Pool
-  storage_profile: Docker-StgProf
+  storage_profile: DEE-StgProf
   lan_connectivity_policy: Cntr-FC-Boot
   san_connectivity_policy: Cntr-FC-Boot
   boot_policy: DEE-vMedia
@@ -29,7 +29,7 @@ ucs_service_profile_templates:
 - name: DEE-Wrk
   template_type: updating-template
   uuid_pool: UUID-Pool
-  storage_profile: Docker-StgProf
+  storage_profile: DEE-StgProf
   lan_connectivity_policy: Cntr-FC-Boot
   san_connectivity_policy: Cntr-FC-Boot
   boot_policy: DEE-vMedia
