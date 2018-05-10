@@ -10,14 +10,14 @@ ucs_server_pools:
         "class": "ComputePool",
         "properties": {
             "parent_mo_or_dn": "org-root",
-            "name": "DEE-Ctrl"
+            "name": "Container-Pool"
         },
         "children": [
             {
                 "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
                 "class": "ComputePooledSlot",
                 "properties": {
-                    "chassis_id": "5",
+                    "chassis_id": "1",
                     "slot_id": "1"
                 }
             },
@@ -25,30 +25,56 @@ ucs_server_pools:
                 "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
                 "class": "ComputePooledSlot",
                 "properties": {
-                    "chassis_id": "7",
-                    "slot_id": "1"
+                    "chassis_id": "1",
+                    "slot_id": "2"
                 }
             },
             {
                 "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
                 "class": "ComputePooledSlot",
                 "properties": {
-                    "chassis_id": "6",
-                    "slot_id": "1"
+                    "chassis_id": "1",
+                    "slot_id": "3"
                 }
             },
             {
-                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
-                "class": "ComputePooledRackUnit",
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
                 "properties": {
-                    "id": "5"
+                    "chassis_id": "1",
+                    "slot_id": "4"
                 }
             },
             {
-                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
-                "class": "ComputePooledRackUnit",
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
                 "properties": {
-                    "id": "3"
+                    "chassis_id": "1",
+                    "slot_id": "5"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
+                "properties": {
+                    "chassis_id": "1",
+                    "slot_id": "6"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
+                "properties": {
+                    "chassis_id": "1",
+                    "slot_id": "7"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
+                "class": "ComputePooledSlot",
+                "properties": {
+                    "chassis_id": "1",
+                    "slot_id": "8"
                 }
             },
             {
@@ -57,117 +83,12 @@ ucs_server_pools:
                 "properties": {
                     "id": "1"
                 }
-            }
-        ]
-    }
-- objects:
-  - {
-        "module": "ucsmsdk.mometa.compute.ComputePool",
-        "class": "ComputePool",
-        "properties": {
-            "parent_mo_or_dn": "org-root",
-            "name": "DEE-DTR"
-        },
-        "children": [
-            {
-                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
-                "class": "ComputePooledSlot",
-                "properties": {
-                    "chassis_id": "5",
-                    "slot_id": "2"
-                }
-            },
-            {
-                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
-                "class": "ComputePooledSlot",
-                "properties": {
-                    "chassis_id": "7",
-                    "slot_id": "2"
-                }
-            },
-            {
-                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
-                "class": "ComputePooledSlot",
-                "properties": {
-                    "chassis_id": "6",
-                    "slot_id": "2"
-                }
-            },
-            {
-                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
-                "class": "ComputePooledRackUnit",
-                "properties": {
-                    "id": "6"
-                }
-            },
-            {
-                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
-                "class": "ComputePooledRackUnit",
-                "properties": {
-                    "id": "4"
-                }
             },
             {
                 "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
                 "class": "ComputePooledRackUnit",
                 "properties": {
                     "id": "2"
-                }
-            }
-        ]
-    }
-- objects:
-  - {
-        "module": "ucsmsdk.mometa.compute.ComputePool",
-        "class": "ComputePool",
-        "properties": {
-            "parent_mo_or_dn": "org-root",
-            "name": "DEE-Wrk"
-        },
-        "children": [
-            {
-                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
-                "class": "ComputePooledSlot",
-                "properties": {
-                    "chassis_id": "5",
-                    "slot_id": "3"
-                }
-            },
-            {
-                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
-                "class": "ComputePooledSlot",
-                "properties": {
-                    "chassis_id": "7",
-                    "slot_id": "3"
-                }
-            },
-            {
-                "module": "ucsmsdk.mometa.compute.ComputePooledSlot",
-                "class": "ComputePooledSlot",
-                "properties": {
-                    "chassis_id": "6",
-                    "slot_id": "3"
-                }
-            },
-            {
-                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
-                "class": "ComputePooledRackUnit",
-                "properties": {
-                    "id": "9"
-                }
-            },
-            {
-                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
-                "class": "ComputePooledRackUnit",
-                "properties": {
-                    "id": "8"
-                }
-            },
-            {
-                "module": "ucsmsdk.mometa.compute.ComputePooledRackUnit",
-                "class": "ComputePooledRackUnit",
-                "properties": {
-                    "id": "7"
                 }
             }
         ]

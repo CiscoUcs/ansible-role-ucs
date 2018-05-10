@@ -1,7 +1,7 @@
 ---
 # defaults file for CiscoUcs.ucs/chassis/disk_zoning_policies
-# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
-# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+# Default values are based on the S3260 Storage Server with SwiftStack Cisco Validated Design (CVD).
+# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/ciscoswiftstack_ucs3260ss_deploy.html.
 
 ucs_disk_zoning_policies:
 - name: Swift-SingleNode

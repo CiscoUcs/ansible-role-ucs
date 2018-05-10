@@ -11,7 +11,7 @@ ucs_port_channels:
         "properties": {
             "parent_mo_or_dn": "fabric/lan/A",
             "admin_speed": "10gbps",
-            "name": "",
+            "name": "PC-12",
             "port_id": "12"
         },
         "children": [
@@ -20,7 +20,7 @@ ucs_port_channels:
                 "class": "FabricEthLanPcEp",
                 "properties": {
                     "name": "",
-                    "port_id": "33",
+                    "port_id": "31",
                     "slot_id": "1"
                 },
             },
@@ -29,7 +29,7 @@ ucs_port_channels:
                 "class": "FabricEthLanPcEp",
                 "properties": {
                     "name": "",
-                    "port_id": "34",
+                    "port_id": "32",
                     "slot_id": "1"
                 },
             },
@@ -42,7 +42,7 @@ ucs_port_channels:
         "properties": {
             "parent_mo_or_dn": "fabric/lan/B",
             "admin_speed": "10gbps",
-            "name": "",
+            "name": "PC-13",
             "port_id": "13"
         },
         "children": [
@@ -51,7 +51,7 @@ ucs_port_channels:
                 "class": "FabricEthLanPcEp",
                 "properties": {
                     "name": "",
-                    "port_id": "33",
+                    "port_id": "31",
                     "slot_id": "1"
                 },
             },
@@ -60,7 +60,7 @@ ucs_port_channels:
                 "class": "FabricEthLanPcEp",
                 "properties": {
                     "name": "",
-                    "port_id": "34",
+                    "port_id": "32",
                     "slot_id": "1"
                 },
             },

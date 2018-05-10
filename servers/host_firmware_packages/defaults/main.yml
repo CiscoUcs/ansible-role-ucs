@@ -10,8 +10,8 @@ ucs_host_firmware_packages:
         "class": "FirmwareComputeHostPack",
         "properties": {
             "parent_mo_or_dn": "org-root",
-            "blade_bundle_version": "3.2(2c)B",
-            "rack_bundle_version": "3.2(2c)C",
-            "name": "3.2.2c"
+            "blade_bundle_version": "3.1(2b)B",
+            "rack_bundle_version": "",
+            "name": "3.1.2b"
         }
     }

@@ -1,7 +1,10 @@
 ---
 # defaults file for CiscoUcs.ucs/servers/service_profile_templates
-# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
-# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+# Default values are based on the Cisco UCS with Contiv and Docker Enterprise Edition for Container Management CVD.
+# The Contiv and Docker EE CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/ucs_contiv_docker.html.
+# Some values have been modified to use share settings from the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
+# The FlexPod CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+# Settings should be customized for your deployment environment
 
 ucs_service_profile_templates:
 - name: DEE-Ctrl
@@ -12,8 +15,8 @@ ucs_service_profile_templates:
   san_connectivity_policy: Cntr-FC-Boot
   boot_policy: DEE-vMedia
   maintenance_policy: default
-  server_pool: DEE-Ctrl
-  host_firmware_package: 3.2.2c
+  server_pool: Container-Pool
+  host_firmware_package: 3.1.2b
   bios_policy: Docker
 - name: DEE-DTR
   template_type: updating-template
@@ -23,8 +26,8 @@ ucs_service_profile_templates:
   san_connectivity_policy: Cntr-FC-Boot
   boot_policy: DEE-vMedia
   maintenance_policy: default
-  server_pool: DEE-DTR
-  host_firmware_package: 3.2.2c
+  server_pool: Container-Pool
+  host_firmware_package: 3.1.2b
   bios_policy: Docker
 - name: DEE-Wrk
   template_type: updating-template
@@ -34,6 +37,6 @@ ucs_service_profile_templates:
   san_connectivity_policy: Cntr-FC-Boot
   boot_policy: DEE-vMedia
   maintenance_policy: default
-  server_pool: DEE-Wrk
-  host_firmware_package: 3.2.2c
+  server_pool: Container-Pool
+  host_firmware_package: 3.1.2b
   bios_policy: Docker

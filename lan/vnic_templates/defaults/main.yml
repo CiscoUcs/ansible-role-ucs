@@ -25,3 +25,8 @@ ucs_vnic_templates:
     native: 'yes'
   - name: Container-TNT-A-NFS
     native: 'no'
+- name: Container-NFS-B
+  fabric: B
+  redundancy_type: secondary
+  peer_redundancy_templ: Container-NFS-A
+  mac_pool: MAC-Pool-B

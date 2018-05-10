@@ -11,17 +11,18 @@
 
   block:
   # admin and equipment can be disruptive, please customize variables for your environment
-  # - include_role:
-  #     name: CiscoUcs.ucs/admin
-  # - include_role:
-  #     name: CiscoUcs.ucs/equipment
+  # Also note that san/storage/chassis or other tasks in this role may not apply to your environment.
+  # You can create playbooks for your environment that include only the needed roles (e.g., CiscoUcs.ucs/lan).
+  - include_role:
+      name: CiscoUcs.ucs/admin
+  - include_role:
+      name: CiscoUcs.ucs/equipment
   - include_role:
       name: CiscoUcs.ucs/lan
   - include_role:
       name: CiscoUcs.ucs/san
-  # chassis not currently included as all environments may not require chassis config
-  # - include_role:
-  #     name: CiscoUcs.ucs/chassis
+  - include_role:
+      name: CiscoUcs.ucs/chassis
   - include_role:
       name: CiscoUcs.ucs/storage
   - include_role:

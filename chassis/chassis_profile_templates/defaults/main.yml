@@ -1,7 +1,7 @@
 ---
 # defaults file for CiscoUcs.ucs/chassis/chassis_profile_templates
-# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
-# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+# Default values are based on the S3260 Storage Server with SwiftStack Cisco Validated Design (CVD).
+# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/ciscoswiftstack_ucs3260ss_deploy.html.
 
 ucs_chassis_profile_templates:
 - name: S3260-Chassis

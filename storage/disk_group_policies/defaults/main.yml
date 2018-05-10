@@ -1,7 +1,7 @@
 ---
 # defaults file for CiscoUcs.ucs/storage/disk_group_policies
-# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
-# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+# Default values are based on the Cisco UCS with Contiv and Docker Enterprise Edition for Container Management.
+# The Contiv and Docker EE CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/ucs_contiv_docker.html.
 
 ucs_disk_group_policies:
 - name: DEE-DG

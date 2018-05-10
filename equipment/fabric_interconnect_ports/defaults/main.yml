@@ -308,7 +308,7 @@ ucs_fabric_interconnect_ports:
                 "module": "ucsmsdk.mometa.fabric.FabricEthLanEp",
                 "class": "FabricEthLanEp",
                 "properties": {
-                    "port_id": "33",
+                    "port_id": "31",
                     "slot_id": "1"
                 }
             }
@@ -326,7 +326,7 @@ ucs_fabric_interconnect_ports:
                 "module": "ucsmsdk.mometa.fabric.FabricEthLanEp",
                 "class": "FabricEthLanEp",
                 "properties": {
-                    "port_id": "34",
+                    "port_id": "32",
                     "slot_id": "1"
                 }
             }
@@ -344,7 +344,7 @@ ucs_fabric_interconnect_ports:
                 "module": "ucsmsdk.mometa.fabric.FabricEthLanEp",
                 "class": "FabricEthLanEp",
                 "properties": {
-                    "port_id": "33",
+                    "port_id": "31",
                     "slot_id": "1"
                 }
             }
@@ -362,7 +362,7 @@ ucs_fabric_interconnect_ports:
                 "module": "ucsmsdk.mometa.fabric.FabricEthLanEp",
                 "class": "FabricEthLanEp",
                 "properties": {
-                    "port_id": "34",
+                    "port_id": "32",
                     "slot_id": "1"
                 }
             }
