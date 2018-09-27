@@ -1,0 +1,3 @@
+[submodule "ucsm-ansible"]
+	path = ucsm-ansible
+	url = https://github.com/CiscoUcs/ucsm-ansible.git

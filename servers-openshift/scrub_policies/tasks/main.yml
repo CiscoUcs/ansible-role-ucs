@@ -1,0 +1,18 @@
+---
+# tasks file for CiscoUcs.ucs/servers/scrub_policies
+- name: UCS Scrub Policy Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure Scrub Policies
+    ucs_managed_objects:
+      <<: *login_info
+      objects: "{{ item.objects }}" 
+    when: item.objects is defined
+    with_items: "{{ ucs_scrub_policies }}"

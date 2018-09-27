@@ -1,0 +1,21 @@
+---
+# tasks file for CiscoUcs.ucs/servers/uuid_pools
+- name: UCS UUID Pool Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure UUID Suffix Pool
+    ucs_uuid_pool:
+      <<: *login_info
+      name: "{{ item.name }}"
+      order: "{{ item.order }}"
+      first_uuid: "{{ item.first_uuid }}"
+      last_uuid: "{{ item.last_uuid }}"
+    when: item.name is defined
+    with_items: "{{ ucs_uuid_pools }}"

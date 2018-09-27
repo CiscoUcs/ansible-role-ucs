@@ -1,0 +1,18 @@
+---
+# tasks file for CiscoUcs.ucs/servers/vmedia_policies
+- name: UCS vMedia Policy Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure vMedia Policies
+    ucs_managed_objects:
+      <<: *login_info
+      objects: "{{ item.objects }}" 
+    when: item.objects is defined
+    with_items: "{{ ucs_vmedia_policies }}"

@@ -1,0 +1,12 @@
+---
+# defaults file for CiscoUcs.ucs/servers/service_profiles_from_templates
+# Default values are based on the OpenShift Container Platform Cisco Validated Design (CVD).
+# Settings should be customized for your deployment environment
+
+ucs_service_profiles_from_templates:
+- name: OCP-Master-01
+  source_template: OCP-Master
+- name: OCP-Infra-01
+  source_template: OCP-Infra
+- name: OCP-Infra-02
+  source_template: OCP-Infra

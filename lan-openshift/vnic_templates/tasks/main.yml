@@ -1,0 +1,26 @@
+---
+# tasks file for CiscoUcs.ucs/lan/vnic_templates
+- name: UCS vNIC Template Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure vNIC Templates
+    ucs_vnic_template:
+      <<: *login_info
+      name: "{{ item.name }}"
+      fabric: "{{ item.fabric }}"
+      redundancy_type: "{{ item.redundancy_type | default(omit) }}"
+      peer_redundancy_templ: "{{ item.peer_redundancy_templ | default(omit) }}"
+      template_type: "{{ item.template_type | default(omit) }}"
+      mtu: "{{ item.mtu | default(omit) }}"
+      mac_pool: "{{ item.mac_pool }}"
+      network_control_policy: "{{ item.network_control_policy | default(omit) }}"
+      vlans_list: "{{ item.vlans_list | default(omit) }}"
+    when: item.name is defined
+    with_items: "{{ ucs_vnic_templates }}"

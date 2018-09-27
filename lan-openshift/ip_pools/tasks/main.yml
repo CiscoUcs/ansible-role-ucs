@@ -1,0 +1,22 @@
+---
+# tasks file for CiscoUcs.ucs/lan/ip_pools
+- name: UCS IP Pool Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure Block of IPv4 Addresses for KVM Access
+    ucs_ip_pool:
+      <<: *login_info
+      name: "{{ item.name }}"
+      first_addr: "{{ item.first_addr }}"
+      last_addr: "{{ item.last_addr }}"
+      subnet_mask: "{{ item.subnet_mask }}"
+      default_gw: "{{ item.default_gw }}"
+    when: item.name is defined
+    with_items: "{{ ucs_ip_pools }}"

@@ -20,10 +20,6 @@
   - include_role:
       name: CiscoUcs.ucs/lan
   - include_role:
-      name: CiscoUcs.ucs/san
-  - include_role:
-      name: CiscoUcs.ucs/chassis
-  - include_role:
       name: CiscoUcs.ucs/storage
   - include_role:
       name: CiscoUcs.ucs/servers

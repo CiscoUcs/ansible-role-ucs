@@ -1,0 +1,39 @@
+---
+# defaults file for CiscoUcs.ucs/lan/vlan_groups role
+# Default values are based on the FlexPod Datacenter with Docker EE Cisco Validated Design (CVD).
+# The CVD is available at https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/flexpod_docker_deploy_design.html.
+
+ucs_vlan_groups:
+- objects:
+  - {
+        "module": "ucsmsdk.mometa.fabric.FabricNetGroup",
+        "class": "FabricNetGroup",
+        "properties": {
+            "parent_mo_or_dn": "fabric/lan",
+            "native_net": "",
+            "name": "inband"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricPooledVlan",
+                "class": "FabricPooledVlan",
+                "properties": {
+                    "name": "vlan244"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricPooledVlan",
+                "class": "FabricPooledVlan",
+                "properties": {
+                    "name": "inband"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.fabric.FabricPooledVlan",
+                "class": "FabricPooledVlan",
+                "properties": {
+                    "name": "vlan7"
+                }
+            }
+        ]
+    }

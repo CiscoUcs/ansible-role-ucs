@@ -1,0 +1,18 @@
+---
+# tasks file for CiscoUse.ucs/lan/vlan_groups
+- name: UCS VLAN Groups Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure VLAN Groups
+    ucs_managed_objects:
+      <<: *login_info
+      objects: "{{ item.objects }}" 
+    when: item.objects is defined
+    with_items: "{{ ucs_vlan_groups }}"

@@ -1,0 +1,25 @@
+---
+# defaults file for CiscoUcs.ucs/servers/bios_policies
+# Default values are based on the OpenShift Container Platform Cisco Validated Design (CVD).
+# Settings should be customized for your deployment environment
+
+ucs_bios_policies:
+- objects:
+  - {
+        "module": "ucsmsdk.mometa.bios.BiosVProfile",
+        "class": "BiosVProfile",
+        "properties": {
+            "parent_mo_or_dn": "org-root",
+            "name": "OCP-Bios",
+            "reboot_on_update": "yes"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.bios.BiosVfConsistentDeviceNameControl",
+                "class": "BiosVfConsistentDeviceNameControl",
+                "properties": {
+                    "vp_cdn_control": "enabled"
+                }
+            }
+        ]
+    }

@@ -1,0 +1,16 @@
+---
+# defaults file for CiscoUcs.ucs/lan/lan_connectivity_policies role
+# Default values are based on the OpenShift Container Platform Cisco Validated Design (CVD).
+# Settings should be customized for your deployment environment
+
+ucs_lan_connectivity_policies:
+- name: OCP-Infra-Ext
+  vnic_list:
+  - name: eno1
+    vnic_template: OCP-Infra-Ext
+    adapter_policy: Linux
+- name: OCP-Infra-Int
+  vnic_list:
+  - name: eno1
+    vnic_template: OCP-Infra-Int
+    adapter_policy: Linux

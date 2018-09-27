@@ -1,0 +1,19 @@
+---
+# defaults file for CiscoUcs.ucs/lan/vnic_templates role
+# Default values are based on the OpenShift Container Platform Cisco Validated Design (CVD).
+
+ucs_vnic_templates:
+- name: OCP-Infra-Ext
+  fabric: A-B
+  template_type: updating-template
+  mac_pool: MAC-Pool-A
+  vlans_list:
+  - name: default
+    native: 'yes'
+- name: OCP-Infra-Int
+  fabric: A-B
+  template_type: updating-template
+  mac_pool: MAC-Pool-A
+  vlans_list:
+  - name: Container-Workload-602
+    native: 'yes'

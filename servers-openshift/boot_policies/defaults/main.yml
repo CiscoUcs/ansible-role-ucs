@@ -1,0 +1,61 @@
+---
+# defaults file for CiscoUcs.ucs/servers/boot_policies
+# Default values are based on the OpenShift Container Platform Cisco Validated Design (CVD).
+# Settings should be customized for your deployment environment
+
+ucs_boot_policies:
+- objects:
+  - {
+        "module": "ucsmsdk.mometa.lsboot.LsbootPolicy",
+        "class": "LsbootPolicy",
+        "properties": {
+            "parent_mo_or_dn": "org-root",
+            "boot_mode": "legacy",
+            "enforce_vnic_name": "yes",
+            "name": "OCP-vMedia",
+            "reboot_on_update": "no"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.lsboot.LsbootVirtualMedia",
+                "class": "LsbootVirtualMedia",
+                "properties": {
+                    "access": "read-write-remote-cimc",
+                    "lun_id": "0",
+                    "order": "3"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.lsboot.LsbootVirtualMedia",
+                "class": "LsbootVirtualMedia",
+                "properties": {
+                    "access": "read-only-remote-cimc",
+                    "lun_id": "0",
+                    "order": "2"
+                }
+            },
+            {
+                "module": "ucsmsdk.mometa.lsboot.LsbootStorage",
+                "class": "LsbootStorage",
+                "properties": {
+                    "order": "1"
+                },
+                "children": [
+                    {
+                        "module": "ucsmsdk.mometa.lsboot.LsbootLocalStorage",
+                        "class": "LsbootLocalStorage",
+                        "properties": {},
+                        "children": [
+                            {
+                                "module": "ucsmsdk.mometa.lsboot.LsbootLocalHddImage",
+                                "class": "LsbootLocalHddImage",
+                                "properties": {
+                                    "order": "1",
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }

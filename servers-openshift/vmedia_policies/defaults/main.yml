@@ -1,0 +1,41 @@
+---
+# defaults file for CiscoUcs.ucs/servers/vmedia_policies
+# Default values are based on the OpenShift Container Platform Cisco Validated Design (CVD).
+# Settings should be customized for your deployment environment
+
+ucs_vmedia_policies:
+- objects:
+  - {
+        "module": "ucsmsdk.mometa.cimcvmedia.CimcvmediaMountConfigPolicy",
+        "class": "CimcvmediaMountConfigPolicy",
+        "properties": {
+            "parent_mo_or_dn": "org-root",
+            "name": "OCP-vMedia"
+        },
+        "children": [
+            {
+                "module": "ucsmsdk.mometa.cimcvmedia.CimcvmediaConfigMountEntry",
+                "class": "CimcvmediaConfigMountEntry",
+                "properties": {
+                    "device_type": "cdd",
+                    "image_file_name": "centos7.2-boot.iso",
+                    "image_path": "mnt/SHARE/ISOS/CENTOS/vmedia_images",
+                    "mapping_name": "CentOS7",
+                    "mount_protocol": "nfs",
+                    "remote_ip_address": "172.22.250.88"
+                },
+            },
+            {
+                "module": "ucsmsdk.mometa.cimcvmedia.CimcvmediaConfigMountEntry",
+                "class": "CimcvmediaConfigMountEntry",
+                "properties": {
+                    "device_type": "hdd",
+                    "image_name_variable": "service-profile-name",
+                    "image_path": "mnt/SHARE/ISOS/CENTOS/vmedia_images",
+                    "mapping_name": "KS",
+                    "mount_protocol": "nfs",
+                    "remote_ip_address": "172.22.250.88"
+                },
+            }
+        ]
+    }

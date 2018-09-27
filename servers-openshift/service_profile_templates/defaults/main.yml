@@ -1,0 +1,24 @@
+---
+# defaults file for CiscoUcs.ucs/servers/service_profile_templates
+# Default values are based on the OpenShift Container Platform Cisco Validated Design (CVD).
+# Settings should be customized for your deployment environment
+
+ucs_service_profile_templates:
+- name: OCP-Master
+  template_type: updating-template
+  uuid_pool: UUID-Pool
+  lan_connectivity_policy: OCP-Infra-Ext
+  vmedia_policy: OCP-vMedia
+  boot_policy: OCP-vMedia
+  maintenance_policy: default
+  server_pool: Container-Pool
+  bios_policy: OCP-BIOS
+- name: OCP-Infra
+  template_type: updating-template
+  uuid_pool: UUID-Pool
+  lan_connectivity_policy: OCP-Infra-Int
+  vmedia_policy: OCP-vMedia
+  boot_policy: OCP-vMedia
+  maintenance_policy: default
+  server_pool: Container-Pool
+  bios_policy: OCP-BIOS

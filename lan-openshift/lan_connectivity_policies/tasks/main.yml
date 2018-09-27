@@ -1,0 +1,19 @@
+---
+# tasks file for CiscoUcs.ucs/lan/lan_connectivity_policies
+- name: UCS LAN Connectivity Policy Configuration
+
+  vars:
+    login_info: &login_info
+      hostname: "{{ ucs_hostname }}"
+      username: "{{ ucs_username }}"
+      password: "{{ ucs_password }}"
+      state: "{{ ucs_state }}"
+
+  block:
+  - name: Configure LAN Connectivity Policies
+    ucs_lan_connectivity:
+      <<: *login_info
+      name: "{{ item.name }}"
+      vnic_list: "{{ item.vnic_list }}"
+    when: item.name is defined
+    with_items: "{{ ucs_lan_connectivity_policies }}"

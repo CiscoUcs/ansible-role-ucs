@@ -1,0 +1,9 @@
+---
+# defaults file for CiscoUcs.ucs/lan-openshift/vlans role
+# Default values are based on the OpenShift Container Platform Cisco Validated Design (CVD).
+
+ucs_vlans:
+- name: Container-MGMT-VLAN
+  id: 224
+- name: Container-Workload-602
+  id: 602 

@@ -11,8 +11,8 @@
 
   block:
   - name: Configure NTP Servers
-    ucs_managed_objects:
+    ucs_ntp_server:
       <<: *login_info
-      objects: "{{ item.objects }}" 
-    when: item.objects is defined
+      ntp_server: "{{ item }}" 
+    when: item is defined
     with_items: "{{ ucs_ntp }}"
